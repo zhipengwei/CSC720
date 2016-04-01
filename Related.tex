@@ -1,0 +1,44 @@
+\section{related work}
+\subsection{software framework}
+In computer programming, a software framework is an abstraction in which software providing generic functionallity can be selectively changed by additional user-written code, thus providing application-specific software. A software framework is a universal, reusable software environment that provides particular functionality as part of a larger software program to facilitate development of software applications, product and solutions.
+
+Once a homework is learned, future projects can be faster and easier to complete; the concept of a framework is to make a one-size-fits-all solution set, and with familarity, code production should logically rise.
+
+Software frameworks rely on the Hollywood Principle: "Don't call us, we'll call you."[10] This means that the user-defined classes (for example, new subclasses), receive messages from the predefined framework classes. Developers usually handle this by implementing superclass abstract methods.
+\subsection{game engine}
+Game engine is a software framework designed for the creation and development of video games.
+
+\subsection{2012}
+policy network:
+what is it?
+
+\subsection{FUEGO}
+an open-source software framework and a state of the art program that plays the game of Go. The framework supports developing game engines for full-information two-player board games, and is used successfully in a substantial number of projects. The FUEGO Go program became the first program to win a game against a top professional player in 9*9 Go.
+
+Advance in theory, such as MCTS and the UCT algorithm have led to breakthrough performance in computer Go.
+
+FUEGO, as an open source software framework, can facilitate and accelerate research. 
+
+The main motivation of the overall FUEGO framework may lie not in the novolty of any of its specific methods and algorithms.
+
+In August 2009, FUEGO became the first program to win an even game against a top-level 9 Dan professional player on 9*9.
+
+\subsubsection{SmartGame library}
+The SMARTGAME library contains generally useful game-independent functionality. It includes utility classes, classes that encapsulate non-portable platform-dependent functionality, and classes and functions that help to represent the game state for two-player games on square boards.
+
+\subsection{Facebook Paper}
+\subsubsection{abstract}
+Search is not strictly necessary for machine Go players. A pure pattern-matching approach, based on a deep convolutional neural network that predicts the next move, can perform as well as Monte Carlo Tree Search-based open source Go engine such as Pachi if its search budget is limited.
+
+Darkforest relies on a DCNN designed for long-term predictions.
+\subsubsection{introduction}
+Recent study shows that the Go board situation could be deciphered with Deep Convolutional Neural Network. They can predict the next move that a human would play 55.2\% of the time.
+
+In this paper, the authors show that DCNN-based move predictions indeed give a strong Go AI, if properly trained. In particular, the authors carefully design the training process and choose to predict next k moves rather than the immediate next move to enrich the gradient signal.
+
+What kind of data is used to train?
+\subsubsection{method}
+\begin{enumerate}
+	\item Using neural network as a function approximator and pattern matcher to predict the next move of Go is a long-standing idea
+	\item recent progress uses deep convolutional neural network for move prediction, and show substantial improvement over shallow networks or linear function approximators based on manually designed features or simple patterns extracted from previous games.
+\end{enumerate}

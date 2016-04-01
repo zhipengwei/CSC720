@@ -18,4 +18,21 @@ Two parts, policy network and value network. It's trained using supervised learn
 
 All game of perfect inforamtion has a optimal value function, which determines the outcome of the game. Two factors deterimines the the complexity of the game, braching factor and depth. To improve the performance, the effective search space can be reduced by two general principles. First, the depth of the search may be reduced by position evaluation: truncating the search space at state s and replacing the subtree below s by an approapriate value function that predicts the outcome from state s;Second, the breadth of the search may be reduced by sampling actions from a policy p(a|s) that is a probability distribution over possible moves a in position s.
 
-Monte Carlo tree search (MCTS), 
+Monte Carlo tree search (MCTS), at each position, for each legal move, k random plays are performed at each legal next position. Then based on the results of these random playout, the most promising move is selected.
+\subsubsection{Supervised learning of policy networks}
+
+\subsubsection{Reinforcement learning of policy networks}
+\subsubsection{Reinforcement learning of value networks}
+Ideally, we would like to know the optimal value function under perfect play; in practice, we instead estimate the value function for our strongest policy.
+\subsubsection{Seaerching with policy and value networks}
+\subsubsection{Evaluating the playing strength of AlphaGo}
+\begin{enumerate}
+	\item To eva
+	\item Single machine AlphaGo is many dan ranks stronger than any previous Go program. To provide a greater challenge to AlphaGo, the author also played games with four handicap stones; AlphaGo won 77\%, 86\%, and 99\% of handicap games against Crazy Stone, Zen and Pachi, respectively. The distributed version of AlphaGo was significantly stronger, winning 77\% of games against single-machine AlphaGo and 100\% of its games against other programs;
+	\item The distributed version is evaluated against Hui Fan;
+\end{enumerate}
+1. To evaluate AlphaGo, 
+2.
+3. The distributed version is evaluated against Hui Fan;
+\subsubsection{Discussion}
+Go is exemplary in many ways of the difficulties faced by artificial inteligence: a challenge decision-making task, an intractable search space, and an optimal solution so complex it appears infeasible to directly approximate using a policy or value function. The previous major breakthough in computer Go, the introduction of MCTS, led to corresponding advances in many other domains; for example, general game-playing, classical planning, partially observed planning, scheduling, and constraint satisfaction.
