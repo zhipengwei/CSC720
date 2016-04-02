@@ -8,6 +8,50 @@ Software frameworks rely on the Hollywood Principle: "Don't call us, we'll call 
 \subsection{game engine}
 Game engine is a software framework designed for the creation and development of video games.
 
+\subsection{Probabilistic reasoning over time}
+In which we try to interpret the present, understand the past, and perhaps predict the future, even when very little is crystal clear.
+\subsubsection{Time and uncertainty}
+Two cases, car repair, we assume that whatever is broken remains broken during the process of diagnosis; our job is to refer the state of the car from observed evidence.
+\subsubsection{Inference in temporal model}
+\textbf{Filtering:} this is the task of computing the belief state - the posterior distribution ove the most recent state - given all evidence to date. Filtering is also called state estimation. This is what a rational agent does to keep track of the current state so that rational decisions can be made.
+\textbf{prediction:} this is the task of computing the posterior distribution over the future state, given all evidence to date. This is used to calculate the probability distribution of future events.
+\textbf{smoothing:}
+\textbf{Most likely explanation:}
+\subsection{reinforcement learning}
+In which we examine how an agent can learn from success and failure, from reward and punishment.
+\subsubsection{introduction}
+\subsubsection{passive reinforcement learning}
+\subsubsection{active reinforcement learning}
+\subsubsection{generalization reinforcement learning}
+\subsubsection{policy search}
+\subsubsection{applications of reinforcement learning}
+
+\subsection{Monte Carlo Go paper 1993}
+\subsubsection{abstract}
+This paper present an algorithm for the board game go which attempts to find the best move by simulated annealing. Using this method, without including any go knowledge beyond the rules, this paper manages to a playing strength of about 25 kyu on a $9\times9$ board.
+\subsubsection{introduction}
+The author started the discussion using "how would nature play go?" Then the author tried to use simulated annealing to solve the problem. The basic idea of the method is simple: 
+\begin{enumerate}
+	\item moves are performed randomly with probabilities assigned by the method of simulated annealing;
+	\item the value of a position in which the game is over is defined by counting, and 
+	\item to find the best move in a given position play the game to the very end as suggested by (i) and then evaluate as in (2); play many such random games, and the best move will be the one which does best on average.
+\end{enumerate}
+The author also believes that the idea is simple, and any good idea can be stated simply. In this paper, the authors also tried to convince the readers that this is at least not a bad idea.
+
+\textbf{Simulated annealing, a Monte Carlo method for combinatorial optimization}
+\subsubsection{Monte Carlo methods in physics}
+\subsubsection{Simulated annealing for mathematical problems}
+If you want to find the minimum of one function, if the function is simple enough and depends only on a small number of variables, there are very efficient exact numerical methods to find its local minima. They are all based essentially the same principle. Pick initial values for each variable and compute the function. Change the variables slightly in such a way that the function velue decreases. Repetition allows one to come arbitrarily close to a local minimum. Different algorithms have been invented to optimize the process at each iteration for different classes of functions.
+
+There are several types of problems where there is virtually no alternative to simulated annealing. As it turns out, these exact algorithms are greedy by design, that is given a starting point they greedily walk downhill (following the steepest descent) until they have found a local minimum. But if one is looking for a global minimum among many local ones, and if one does not know before-hand where to look for it, one will never find it.
+
+\textbf{Two combinatorial optimization}
+traveling salesman problem. These problems are examples for combinatorial optimization since the configuration space on which function is to be minimized is a discrete, factorially large space. In the traveling salesman problem, there are $N = N \times (N-1) \times \times 1$ possibilities to make an ordered list of N cities.
+
+Second example is to find the arrangement of 25 playing cards in a $5 \times 5$ tableau such that the value of the rows, columns, and diagonals interpreted as hands for poker is maximized.
+
+\subsubsection{Simulated annealing for tree searches}
+
 \subsection{2012}
 policy network:
 what is it?
@@ -26,11 +70,39 @@ In August 2009, FUEGO became the first program to win an even game against a top
 \subsubsection{SmartGame library}
 The SMARTGAME library contains generally useful game-independent functionality. It includes utility classes, classes that encapsulate non-portable platform-dependent functionality, and classes and functions that help to represent the game state for two-player games on square boards.
 
+\subsection{Move evaluation in go using deep convolutional neural networks}
+The game of Go is more challenging than other board games, due to difficulty of constructing a position or move evaluation function. This paper investigate whether deep convolutional networks can be used to directly represent and learn this knowledge. The paper trains a 12-layer convolutional neural network by supervised learning from a database of human professional games. The network correctly predicts the expert move in 55\% of positions, equaling the accuracy of a 6 dan human player.
+
+\textbf{Why this paper is new?} Although CNNs have previously been applied to the game of Go, with modest success, previous architectures have typically been limited to one hidden layer of relatively small size, and have not exploited recent advances in computational power. This paper uses deeper and larger CNNs of 12 hidden layers and several billion connections to represent and learn knowledge. And this increase in depth and size leads to a qualitative jump in performance, suggesting that contrary to previous beliefs, a strong move evaluation function for Go can indeed be represented and learnt by such architectures.
+
+\textbf{History - Convolutional neural networks have a long history in the game of Go.}Schraudolph Schraudolph
+et al. (1994) trained a simple CNN (exploiting rotational, reflectional, and colour inversion symmetries)
+to predict final territory, by reinforcement learning from games of self-play. The resulting
+program beat a simplistic handcrafted program called Wally. NeuroGo (Enzenberger, 1996) used
+a more sophisticated architecture to predict final territory, eyes, and connectivity, again exploiting
+symmetries; and used a connectivity pathfinder to propagate information across weakly connected
+groups of stones. Enzenberger’s program also used reinforcement learning from self-play. When
+combined with an alpha-beta search, NeuroGo equalled the performance of GnuGo on 9 $\times$ 9 Go,
+and reached around 13 kyu on 19$\times$19 Go. Sutskever \& Nair (2008) applied convolutional networks
+to supervised learning of expert moves, but using a small 1 hidden layer CNN; this matched
+the state-of-the-art prediction performance, achieving 34.6\% accuracy, but this was not sufficient to
+play Go at any reasonable level.
+
+The 12 layer neural network has implicitly understood many sophisticated aspects of Go, including good
+shape (patterns that maximise long term effectiveness of stones), Fuseki (opening sequences), Joseki
+(corner patterns), Tesuji (tactical patterns), Ko fights (intricate tactical battles involving repeated
+recapture of the same stones), territory (ownership of points), and influence (long-term potential
+for territory). It is remarkable that a single, unified, straightforward architecture can master these
+elements of the game to such a degree, and without any explicit lookahead.
+
+\textbf{Two scaling directions.} It appears that we now have two core elements that scale effectively with increased computational resources: scalable planning, using Monte-Carlo search; and scalable evaluation functions, using deep neural netowrks. In the future, as parallel computation units such as GPUs continue to increase in performance, we believe that this trajectory of research will lead to considerably stronger programs than are currently possible.
+
+\textbf{weakness of this method.} Notably it sometimes fails to understand the global picture, behaving as if the life and death status of large groups has been incorrectly assessed. Interestingly, it is precisely these global aspects of the game for which Monte-Carlo search excels, suggesting that these two techniques may be largely complementary. We have provided a preliminary proof-of-concept that MCTS and deep neural networks may be combined effectively.
 \subsection{Facebook Paper}
 \subsubsection{abstract}
 Search is not strictly necessary for machine Go players. A pure pattern-matching approach, based on a deep convolutional neural network that predicts the next move, can perform as well as Monte Carlo Tree Search-based open source Go engine such as Pachi if its search budget is limited.
 
-Darkforest relies on a DCNN designed for long-term predictions.
+Darkforest relies on a DCNN designed for long-term predictions. While the previous methods can predict the next move that a human would play 55.2\% of the time. However, whether this accuracy leads to a strong Go AI is not yet well understood. This paper tries to show that DCNN-based move predictions indeed give a strong Go AI, if properly trained.
 \subsubsection{introduction}
 Recent study shows that the Go board situation could be deciphered with Deep Convolutional Neural Network. They can predict the next move that a human would play 55.2\% of the time.
 
@@ -38,7 +110,42 @@ In this paper, the authors show that DCNN-based move predictions indeed give a s
 
 What kind of data is used to train?
 \subsubsection{method}
+\subsubsection{feature channel}
+\subsubsection{network architecture}
+\textbf{What properties decide the performance of a neural network?}
+This paper uses a 12-layered full convolutional network. Each convolutional layer is followed by a ReLU nonlinearity. Except for the first layer, all layers use the same width w = 384. No weight sharing is used. We do not use pooling since they negatively affect the performance. Instead of using two softmax outputs to predict black and white moves, we only use one softmax layer to predict the next move, reducing the number of parameters.
+\subsubsection{long term planning}
+Predicting only the immediate next move limits the informaiton received by the lower layers. Instead, we predict next k moves from the current board situation. Each move is a separate softmax output. The motivation is two-fold. First, we want our network to focus on a strategic plan rather than the immediate next move. Second, with multiple softmax outputs, we expect to have more supervisions to train the network. 
+\subsubsection{training}
+When training, we use 16 CPU threads to prepare the minibatch, each simulating 300 random selected
+games from the dataset. In each minibatch, for each thread, randomly select one game out of
+300, simulate one step according to the game record, and extract features and next k moves as the
+input/output pair in the batch. If the game has ended (or fewer than k moves are left), we randomly
+pick one (with replacement) from the training set and continue. The batch size is 256. We use data
+augmentation with rotation at 90-degree intervals and horizontal vertical flipping. For each board
+situation, data augmentation could generate up to 8 different situations.
+Before training, we randomly initialize games into different stages. This ensures that each batch
+contains situations corresponding to different stages of games. Without this, the network will quickly
+overfit and get trapped into poor local minima.
+\subsubsection{monte carlo tree search}
+From the experiments, we clearly show that DCNN is tactically weak due to the lack of search.
+Search is a way to explore the solution space conditioned on the current board situation, and build
+a non-parametric local model for the game. The local model is more flexible than the global model
+learned from massive training data and more adapted to the current situation. The state-of-the-art
+approach in computer Go is Monte-Carlo Tree Search (MCTS).
+\subsubsection{method}
 \begin{enumerate}
 	\item Using neural network as a function approximator and pattern matcher to predict the next move of Go is a long-standing idea
 	\item recent progress uses deep convolutional neural network for move prediction, and show substantial improvement over shallow networks or linear function approximators based on manually designed features or simple patterns extracted from previous games.
+\end{enumerate}
+
+\subsubsection{Knowledge representation}
+The author tries to give the definition of what knowledge is. Something is strange that this question has never been answered directly. In history, different people have tried to describe it from different prospectives. The authors believe that this question can be answered in terms of five important and distinctly different roles that a representation play.
+\begin{enumerate}
+	\item A knowledge representation is most fundamentally a surrogate, a substitute for the thing itself, used to enable an entity to determine consequences by thinking rather than acting;
+	\item It is a set of ontological commitments;
+	\item It's a fragmentary theory of intelligent reasoning;
+	\item It's a medium for pragmatically efficient computation;
+	\itme It's a medium of human expression.
+Also there are two terminologies, inference, to mean any way to get new expressions from old; give the familiar set of basic representation tools like logic, rule, frames, semantic nets, as knowledge representation technologies.
 \end{enumerate}
