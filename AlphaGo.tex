@@ -553,7 +553,31 @@ This project will summarize different aspects of game-playing AI. Through this p
 \end{enumerate}
 \subsection{Review the algorithms}
 
+\begin{table}
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+		stride  &number    & stride & number \\ \otoprule
+		64B      & $15 \times 2^{14}$  &   32KB      &   $15 \times 2^{5}$     \\ \midrule
+		128B     & $15 \times 2^{13}$  &   64KB      &   $15 \times 2^{4}$     \\ \midrule
+		256B     & $15 \times 2^{12}$  &  128KB      &   $15 \times 2^{3}$     \\ \midrule
+		512B     & $15 \times 2^{11}$  &  256KB      &   $15 \times 2^{3}$     \\ \midrule
+		 1KB     & $15 \times 2^{10}$  &  512KB      &   $15 \times 2^{3}$     \\ \midrule
+		 2KB     & $15 \times 2^{9}$   &    1MB      &   $15 \times 2^{3}$     \\ \midrule
+		 4KB     & $15 \times 2^{8}$   &    2MB      &   $15 \times 2^{3}$     \\ \midrule
+		 8KB     & $15 \times 2^{7}$   &    4MB      &   $15 \times 2^{3}$     \\ \midrule
+		16KB     & $15 \times 2^{6}$   &    8MB      &   $15 \times 2^{3}$     \\ \bottomrule
+		\end{tabular}
+		\caption{The number of cache lines that reside in cache when accessing using different stride and array size.}
+		\label{table:3bitscombinationshuffled}
+\end{table}
 
+\begin{figure}[t]
+\centering
+%\includegraphics[width=3in]{New01TestProcedure.pdf}
+\caption{The procedure to crack the hash function.}
+\label{fig:TestProcedure}
+\end{figure}
 
 %\subsection{Cache capacity per color}
 %When ULCC has been ported to Sandy Bridge processor, this article implement a program to see whether we can specify the cache capacity can use through page coloring. The main function of the program is allocating a segment of memory and perform sequential accessing. By changing the size of physical memory sequentially accessed and specifying the color of physical memory can use, when the size of accessed physical memory exceeds the size of the specified cache capacity, the difference will be indicated by average access latency. 
