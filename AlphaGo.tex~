@@ -528,7 +528,7 @@
 
 \input{abstract}
 \input{introduction}
-\input{BackgroundKnowledge}
+\input{background}
 \input{Related}
 \input{Comparison}
 

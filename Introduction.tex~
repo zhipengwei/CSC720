@@ -21,24 +21,24 @@ Working out who is winning in Go is much harder. A stone's value comes only from
 Even good players are not able to talk about the exact strategies. It seems like that, this game is more about intuition, which is different from the computer programming job.
 
 Different methods have been proposed to solve this problem.
-%\begin{table}
-%	\centering
-%	\begin{tabular}{cccc}
-%		\toprule
-%       	      Prospect   & Chess    	       & Go     \\ \otoprule
-%	Braching factor  & $15 \times 2^{14}$  &   32KB \\ \midrule
-%	Size of board    & $15 \times 2^{13}$  &   64KB \\ \midrule
-%From amateur to professional     & $15 \times 2^{12}$  &  128KB \\ \midrule
-%		512B     & $15 \times 2^{11}$  &  256KB \\ \midrule
-%		 1KB     & $15 \times 2^{10}$  &  512KB \\ \midrule
-%		 2KB     & $15 \times 2^{9}$   &    1MB \\ \midrule
-%		 4KB     & $15 \times 2^{8}$   &    2MB \\ \midrule
-%		 8KB     & $15 \times 2^{7}$   &    4MB \\ \midrule
-%		16KB     & $15 \times 2^{6}$   &    8MB \\ \bottomrule
-%		\end{tabular}
-%		\caption{The comparison between Chess and Go.}
-%		\label{table:ComparisonOfChessAndGo}
-%\end{table}
+\begin{table}
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+       	      Prospect   & Chess    	       & Go     \\ \otoprule
+	Braching factor  & $15 \times 2^{14}$  &   32KB \\ \midrule
+	Size of board    & $15 \times 2^{13}$  &   64KB \\ \midrule
+From amateur to professional     & $15 \times 2^{12}$  &  128KB \\ \midrule
+		512B     & $15 \times 2^{11}$  &  256KB \\ \midrule
+		 1KB     & $15 \times 2^{10}$  &  512KB \\ \midrule
+		 2KB     & $15 \times 2^{9}$   &    1MB \\ \midrule
+		 4KB     & $15 \times 2^{8}$   &    2MB \\ \midrule
+		 8KB     & $15 \times 2^{7}$   &    4MB \\ \midrule
+		16KB     & $15 \times 2^{6}$   &    8MB \\ \bottomrule
+		\end{tabular}
+		\caption{The comparison between Chess and Go.}
+		\label{table:ComparisonOfChessAndGo}
+\end{table}
 %
 %\begin{figure}[!ht]
 %  \caption{The complexity comparison of different board games}

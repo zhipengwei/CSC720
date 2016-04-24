@@ -144,13 +144,13 @@ Go has emerged as a major challenge for AI with the best computer Go programs cu
 %\subsubsection{pattern harvesting}
 %\subsubsection{models for move prediction}
 %
-\subsection{Mimicking Go Experts with Convolutional Neural Networks~\cite{sutskever2008mimicking}}
+\subsection{Mimicking Go Experts with Convolutional Neural Networks}
 \subsubsection{The techniques useful for chess are not useful for Go}
 First, the nature of the rules of Chess makes it easy to estimate the player with the advantage, simply by counting the pieces. This and similar heuristics allow minimax search to compute a good move reasonably rapidly. In contrast, there is no easy way to determine the player with the advantages in Go. In particular, counting captured pieces does not work for Go because the value of a piece depends more heavily on its surroundings. The ability to raplidly evaluate Go positions prevents minimax searches from finding good moves. Second, typical Chess positions have 40 legal moves, while typical Go positions have 200 legal moves, so the search space is substantially larger. This partly explains why there are still no strong computer Go players.
 \subsubsection{Move predictor}
 Constructing a fairly accurate move predictor is potentially easier than playing Go well, because an accurate move predictor can occasionally make devastating mistakes which would make it a poor Go player.
 
-\subsection{Mastering the game of Go with deep neural networks and tree search~\cite{silver2016mastering}}
+\subsection{Mastering the game of Go with deep neural networks and tree search}
 All game of perfect inforamtion has a optimal value function, which determines the outcome of the game. Two factors deterimines the the complexity of the game, braching factor and depth. To improve the performance, the effective search space can be reduced by two general principles. First, the depth of the search may be reduced by position evaluation: truncating the search space at state s and replacing the subtree below s by an approapriate value function that predicts the outcome from state s; Second, the breadth of the search may be reduced by sampling actions from a policy p(a|s) that is a probability distribution over possible moves a in position s. As discussed above, the search space of Go is too large, so it is not possible to traverse the whole space to get the final result. The basic idea is, use the old methods, but combine them. 
 \begin{figure*}[!ht]
   \caption{The complexity comparison of different board games}
