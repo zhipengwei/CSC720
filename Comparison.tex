@@ -1,4 +1,13 @@
 \section{Comparison}
-These methods have spanned a long time in the history. They appear in different background. 
-\subsection{Limitations of different methods}
-\subsection{Open problems}
+The previous section lists a few research results of different researchers to improve the ability of computer to play the computer Go. 
+
+Monte Carlo Go, is to perform simulation of random chosen moves at each step. The board reaches the final stage, different kinds of results will be counted. When large number of random plays are performed, a evaluting function can be get from these results. The results can be used to guide the choosing of moves in the future.
+
+The method proposed by researchers of facebook show a big improvement over this paper~\cite{sutskever2008mimicking}. However, there will still be some restrictions. As stated by the author, 
+\begin{inparaenum}
+	\item The top-3/5 moves of DCNN might not contain a critical local move to save/kill the local self/enemy group so local tactics remain weak. Sometimes the bot plays tenuki pointlessly when a tight local bettle is needed;
+	\item DCNN tends to give high confidence for ko moves even they are useless. This enables DCNN to play single ko fights decently, by following the pattern of playing the ko, playing ko threats and playing the ko again. But it also gets confused in the presence of double ko;
+	\item When the bot is losing, it plays bad moves like other MCTS bots and loses more.
+
+Nature paper doesn't propose new method. It combines the existing methods.
+\end{inparaenum}
